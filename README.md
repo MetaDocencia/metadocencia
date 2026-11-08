@@ -1,7 +1,7 @@
 
 <!-- README.md se genera desde README.Rmd. Editá este archivo. -->
 
-# metadocencia <img src="inst/extdata/_extensions/metadocencia/brand/logo.png" align="right" height="60"/>
+# metadocencia <img src="man/figures/logo.png" align="right" height="60" alt="Logo de MetaDocencia"/>
 
 Reportes, notas y presentaciones con la identidad visual de
 [MetaDocencia](https://www.metadocencia.org), hechos con

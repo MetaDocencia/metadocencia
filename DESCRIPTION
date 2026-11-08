@@ -14,7 +14,7 @@ Description: Distribuye una extensión de Quarto con la identidad visual de
     diagnosticar y actualizar la identidad en documentos existentes, y
     aplicar la paleta institucional a gráficos de 'ggplot2'.
 License: MIT + file LICENSE
-URL: https://github.com/metadocencia/metadocencia
+URL: https://github.com/metadocencia/metadocencia, https://metadocencia.github.io/metadocencia/
 BugReports: https://github.com/metadocencia/metadocencia/issues
 Depends:
     R (>= 4.1)

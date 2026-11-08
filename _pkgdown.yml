@@ -1,0 +1,30 @@
+url: https://metadocencia.github.io/metadocencia/
+lang: es
+
+template:
+  bootstrap: 5
+  bslib:
+    primary: "#00506F"
+    base_font: {google: "Open Sans"}
+    heading_font: {google: "Barlow"}
+    code_font: {google: "JetBrains Mono"}
+
+reference:
+  - title: Crear documentos
+    contents:
+      - nuevo_documento
+      - listar_tipos
+  - title: Mantener la identidad
+    contents:
+      - diagnosticar_brand
+      - actualizar_brand
+  - title: Colores y gráficos
+    contents:
+      - theme_metadocencia
+      - scale_color_metadocencia
+      - paleta_metadocencia
+      - colores_metadocencia
+  - title: Consulta
+    contents:
+      - leer_brand
+      - ruta_brand
