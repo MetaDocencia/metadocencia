@@ -1,0 +1,152 @@
+# metadocencia
+
+Reportes, notas y presentaciones con la identidad visual de
+[MetaDocencia](https://www.metadocencia.org), hechos con
+[Quarto](https://quarto.org) y R.
+
+## Instalación
+
+``` r
+
+# install.packages("pak")
+pak::pak("metadocencia/metadocencia")
+```
+
+Requiere Quarto ≥ 1.9. El PDF se genera con Typst, que viene con Quarto:
+no hace falta instalar LaTeX.
+
+## Uso
+
+``` r
+
+library(metadocencia)
+listar_tipos()
+#>           tipo               formato
+#> 1 reporte-html     metadocencia-html
+#> 2  reporte-pdf    metadocencia-typst
+#> 3 presentacion metadocencia-revealjs
+#> 4         nota    metadocencia-typst
+#>                                                    descripcion
+#> 1 Reporte HTML autocontenido con índice y secciones numeradas.
+#> 2      Reporte PDF (Typst) con encabezado y pie institucional.
+#> 3                Presentación RevealJS con tema institucional.
+#> 4       Nota o carta breve en PDF con Para / De / Fecha / Ref.
+```
+
+``` r
+
+nuevo_documento("informe-anual", tipo = "reporte-html")
+nuevo_documento("informe-anual-pdf", tipo = "reporte-pdf")
+nuevo_documento("charla-congreso", tipo = "presentacion")
+nuevo_documento("nota-convenio", tipo = "nota")
+```
+
+Cada documento es una carpeta así:
+
+``` R
+informe-anual/
+├── informe-anual.qmd            # lo único que se edita
+├── _quarto.yml
+└── _extensions/metadocencia/    # formatos e identidad (no tocar)
+```
+
+### Gráficos
+
+``` r
+
+library(ggplot2)
+theme_set(theme_metadocencia())
+
+ggplot(mpg, aes(displ, hwy, colour = drv)) +
+  geom_point() +
+  scale_colour_metadocencia()
+```
+
+``` r
+
+paleta_metadocencia()
+#> [1] "#C83737" "#C86E37" "#00506F" "#F77B20" "#00788F"
+```
+
+### Bloque destacado
+
+Funciona igual en HTML, PDF y diapositivas:
+
+``` markdown
+::: {.destacado}
+**Mensaje clave.** La conclusión que no se puede perder.
+:::
+```
+
+### Cuando cambia la identidad
+
+``` r
+
+diagnosticar_brand("~/documentos", recursivo = TRUE)   # qué está desactualizado
+actualizar_brand("~/documentos", recursivo = TRUE)     # actualizar
+```
+
+Solo se reemplaza `_extensions/metadocencia/`; el contenido de los
+`.qmd` no se toca.
+
+## Cómo se modifica
+
+Todo está en `inst/extdata/_extensions/metadocencia/`:
+
+| Quiero cambiar… | Archivo |
+|----|----|
+| Colores | `brand/_brand.yml` → `color` |
+| Logo | `brand/logo.png` |
+| Tipografías | `brand/fuentes/`, `brand/_brand.yml` y `fuentes.html` |
+| Orden de colores de gráficos | `brand/_brand.yml` → `defaults` |
+| Diseño del PDF | `typst/typst-template.typ` |
+| Diseño del HTML / diapositivas | `html/estilos.scss`, `revealjs/estilos.scss` |
+| Opciones por defecto | `_extension.yml` |
+
+Después de cualquier cambio, subí `version` en `_extension.yml` y en
+`DESCRIPTION`.
+
+## Licencias
+
+Código: MIT. Fuentes: SIL Open Font License 1.1 (ver
+`brand/fuentes/LICENCIA-*.txt`).
+
+# Package index
+
+## Crear documentos
+
+- [`nuevo_documento()`](https://metadocencia.github.io/metadocencia/reference/nuevo_documento.md)
+  : Crear un documento con la identidad de MetaDocencia
+- [`listar_tipos()`](https://metadocencia.github.io/metadocencia/reference/listar_tipos.md)
+  : Tipos de documento disponibles
+
+## Mantener la identidad
+
+- [`diagnosticar_brand()`](https://metadocencia.github.io/metadocencia/reference/diagnosticar_brand.md)
+  : Diagnosticar la identidad visual de documentos existentes
+- [`actualizar_brand()`](https://metadocencia.github.io/metadocencia/reference/actualizar_brand.md)
+  : Actualizar la identidad visual en documentos existentes
+
+## Colores y gráficos
+
+- [`theme_metadocencia()`](https://metadocencia.github.io/metadocencia/reference/theme_metadocencia.md)
+  : Tema de ggplot2 de MetaDocencia
+- [`scale_color_metadocencia()`](https://metadocencia.github.io/metadocencia/reference/scale_color_metadocencia.md)
+  [`scale_colour_metadocencia()`](https://metadocencia.github.io/metadocencia/reference/scale_color_metadocencia.md)
+  [`scale_fill_metadocencia()`](https://metadocencia.github.io/metadocencia/reference/scale_color_metadocencia.md)
+  : Escalas de color de MetaDocencia para ggplot2
+- [`paleta_metadocencia()`](https://metadocencia.github.io/metadocencia/reference/paleta_metadocencia.md)
+  : Paleta categórica de MetaDocencia
+- [`colores_metadocencia()`](https://metadocencia.github.io/metadocencia/reference/colores_metadocencia.md)
+  : Colores de MetaDocencia
+
+## Consulta
+
+- [`leer_brand()`](https://metadocencia.github.io/metadocencia/reference/leer_brand.md)
+  : Leer la identidad visual de MetaDocencia
+
+- [`ruta_brand()`](https://metadocencia.github.io/metadocencia/reference/ruta_brand.md)
+  :
+
+  Ruta al archivo `_brand.yml` de MetaDocencia
+
