@@ -1,0 +1,66 @@
+title: MetaDocencia
+author: MetaDocencia
+version: 1.0.0
+quarto-required: ">=1.9.0"
+contributes:
+  # La identidad (colores, fuentes, logo) se declara una sola vez y la
+  # comparten todos los formatos.
+  metadata:
+    project:
+      brand: brand/_brand.yml
+  formats:
+    common:
+      lang: es
+      date-format: "D [de] MMMM, YYYY"
+      toc-title: Contenidos
+      fig-align: center
+      fig-cap-location: bottom
+      tbl-cap-location: top
+      filters:
+        - destacado.lua
+      execute:
+        echo: false
+        warning: false
+        message: false
+    html:
+      theme:
+        - default
+        - html/estilos.scss
+      include-in-header: fuentes.html
+      toc: true
+      toc-depth: 3
+      number-sections: true
+      embed-resources: true
+    typst:
+      papersize: a4
+      fontsize: 11pt
+      font-paths:
+        - brand/fuentes
+      margin:
+        x: 2.5cm
+        top: 3cm
+        bottom: 2.8cm
+      toc: true
+      toc-depth: 3
+      section-numbering: "1.1."
+      fig-format: png
+      fig-dpi: 300
+      template-partials:
+        - typst/typst-template.typ
+        - typst/typst-show.typ
+        - typst/page.typ
+      # Quarto no pasa brand.meta.name a Typst: se declara acá.
+      institucion: MetaDocencia
+    revealjs:
+      theme:
+        - default
+        - revealjs/estilos.scss
+      include-in-header: fuentes.html
+      logo: brand/logo.png
+      slide-number: true
+      transition: fade
+      transition-speed: fast
+      center: false
+      width: 1280
+      height: 720
+      embed-resources: true

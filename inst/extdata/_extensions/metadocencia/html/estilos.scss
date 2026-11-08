@@ -1,0 +1,85 @@
+/*-- scss:defaults --*/
+// Colores y tipografías llegan desde brand/_brand.yml.
+// Las variables $brand-* recién existen en la capa "rules": acá van solo
+// valores que no dependen del brand.
+$border-radius: .25rem !default;
+
+/*-- scss:rules --*/
+
+// ---- Títulos: jerarquía de la guía de estilo ---------------------------
+// H1 gris + línea azul · H2 rojo · H3 azul sin negrita
+h1, h2, h3, h4, h5, h6 { font-family: "Barlow", sans-serif; }
+
+h1 {
+  font-size: 2.2rem;
+  color: $brand-gris-texto;
+  border-bottom: 3px solid $brand-azul;
+  padding-bottom: .3em;
+  margin-top: 1.5em;
+}
+h2 { font-size: 1.5rem; color: $brand-rojo; margin-top: 1.4em; border-bottom: none; }
+h3 { font-size: 1.2rem; font-weight: 400; color: $brand-azul; margin-top: 1.2em; }
+
+// ---- Bloque de título: borde naranja a la izquierda --------------------
+#title-block-header.quarto-title-block .quarto-title,
+.quarto-title {
+  border-left: 5px solid $brand-naranja;
+  padding-left: 1.2em;
+  margin-bottom: 1.5em;
+  .title { color: $brand-gris-texto; font-weight: 700; border: none; }
+  .subtitle { color: $brand-azul; font-family: "Barlow", sans-serif; }
+}
+
+// Logo arriba del título
+#title-block-header::before {
+  content: "";
+  display: block;
+  width: 170px;
+  height: 56px;
+  margin-bottom: 1.2rem;
+  background: url("_extensions/metadocencia/brand/logo.png") no-repeat left center / contain;
+}
+
+// ---- Links y código -----------------------------------------------------
+a { text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+code {
+  font-family: "JetBrains Mono", monospace;
+  background-color: $brand-gris-suave;
+  color: $brand-azul;
+  padding: .15em .4em;
+  border-radius: 3px;
+}
+pre code { background: none; padding: 0; color: inherit; }
+
+// ---- Índice -------------------------------------------------------------
+#TOC { border-left: 3px solid $brand-azul; padding-left: 1em; }
+#TOC .active { color: $brand-rojo; font-weight: 600; }
+
+// ---- Tablas ---------------------------------------------------------------
+.table {
+  font-size: .9rem;
+  thead th {
+    background-color: $brand-azul;
+    color: #fff;
+    font-family: "Barlow", sans-serif;
+    font-weight: 700;
+    border-bottom: none;
+  }
+  tbody tr:nth-child(even) { background-color: $brand-gris-suave; }
+}
+
+// ---- Callouts y bloque destacado -------------------------------------------
+div.callout-note.callout { border-left-color: $brand-azul; }
+div.callout-warning.callout { border-left-color: $brand-naranja; }
+div.callout-important.callout { border-left-color: $brand-rojo; }
+
+// ::: {.destacado}
+.destacado {
+  background: $brand-gris-suave;
+  border-left: 5px solid $brand-naranja;
+  padding: 1rem 1.25rem;
+  margin: 1.5rem 0;
+  > :last-child { margin-bottom: 0; }
+}

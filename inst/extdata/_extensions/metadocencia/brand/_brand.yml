@@ -1,0 +1,88 @@
+# =====================================================================
+#  Identidad institucional de MetaDocencia: ÚNICA fuente de verdad.
+#  Lo leen Quarto (HTML, PDF/Typst, RevealJS) y las funciones de R.
+#  Especificación: https://posit-dev.github.io/brand-yml/
+# =====================================================================
+
+meta:
+  name: MetaDocencia
+  link: https://www.metadocencia.org
+
+logo:
+  images:
+    horizontal:
+      path: logo.png
+      alt: Logo de MetaDocencia
+  small: horizontal
+  medium: horizontal
+  large: horizontal
+
+color:
+  palette:
+    # Institucionales
+    azul: "#00506F"          # Pantone 3025 C — primario
+    rojo: "#C83737"          # Pantone 180 C — acento, títulos de nivel 2
+    naranja: "#F77B20"       # Pantone 021 C — acento secundario
+    # Complementarios para gráficos
+    rojo-naranja: "#C86E37"  # análogo cálido
+    azul-verde: "#00788F"    # análogo frío: solo si hace falta un 5.º color
+    # Texto y fondo
+    gris-texto: "#404040"    # títulos de nivel 1
+    gris-suave: "#F5F8FA"    # fondos de tablas, código y bloques
+    gris-linea: "#DDDDDD"
+    negro: "#000000"         # texto normal
+    blanco: "#FFFFFF"
+    link: "#1155CC"
+    # Tintes
+    azul-80: "#336F87"
+    azul-60: "#668FA0"
+    azul-40: "#99AFB8"
+    azul-20: "#CCCFD1"
+    rojo-80: "#D35F5F"
+    rojo-60: "#DE8787"
+    rojo-40: "#E9AFAF"
+    rojo-20: "#F4D7D7"
+    naranja-80: "#F9955A"
+    naranja-60: "#FBAF84"
+    naranja-40: "#FCC9AD"
+    naranja-20: "#FEE4D6"
+
+  foreground: negro
+  background: blanco
+  primary: azul
+  secondary: rojo
+  tertiary: naranja
+  light: gris-suave
+  dark: gris-texto
+
+typography:
+  # Los archivos viajan dentro de la extensión (brand/fuentes/):
+  #   .ttf   -> PDF (Typst), vía `font-paths` en _extension.yml
+  #   .woff2 -> HTML y RevealJS, vía ../fuentes.html
+  # Se declaran como `system` para que Quarto use solo el nombre.
+  fonts:
+    - family: Open Sans
+      source: system
+    - family: Barlow
+      source: system
+    - family: JetBrains Mono
+      source: system
+  base:
+    family: Open Sans
+    size: 12pt
+    line-height: 1.5
+  headings:
+    family: Barlow
+    weight: 700
+    color: gris-texto
+  monospace:
+    family: JetBrains Mono
+  link:
+    color: link
+
+defaults:
+  # Configuración propia del paquete (Quarto la ignora).
+  metadocencia:
+    # Orden de colores para gráficos categóricos. El 5.º (azul-verde)
+    # se usa solo cuando hacen falta cinco colores.
+    paleta-categorica: [rojo, rojo-naranja, azul, naranja, azul-verde]

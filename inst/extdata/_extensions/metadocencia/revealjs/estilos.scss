@@ -1,0 +1,63 @@
+/*-- scss:defaults --*/
+// Colores y tipografías llegan desde brand/_brand.yml. Las variables
+// $brand-* recién existen en la capa "rules".
+$presentation-font-size-root: 28px !default;
+$presentation-h1-font-size: 2.2em !default;
+$presentation-h2-font-size: 1.5em !default;
+$presentation-h3-font-size: 1.2em !default;
+$presentation-heading-font-weight: 700 !default;
+
+/*-- scss:rules --*/
+
+.reveal { font-family: "Open Sans", sans-serif; }
+.reveal h1, .reveal h2, .reveal h3 { font-family: "Barlow", sans-serif; text-transform: none; }
+.reveal h1 { color: $brand-gris-texto; }
+.reveal h2 { color: $brand-rojo; }
+.reveal h3 { color: $brand-azul; font-weight: 400; }
+
+.reveal code {
+  font-family: "JetBrains Mono", monospace;
+  font-size: .82em;
+  background: rgba($brand-azul, .08);
+  color: $brand-azul;
+  padding: .1em .35em;
+  border-radius: 3px;
+}
+
+// ---- Diapositiva de título: fondo azul (lo aplica la plantilla) ---------
+#title-slide {
+  text-align: left;
+  .title { color: #fff; border-bottom: 3px solid $brand-naranja; padding-bottom: .3em; }
+  .subtitle { color: rgba(#fff, .85); font-family: "Barlow", sans-serif; }
+  .quarto-title-authors { justify-content: flex-start; }
+  .quarto-title-author { padding-left: 0; }
+  .quarto-title-author-name, .date { color: rgba(#fff, .75); font-size: .85em; }
+}
+
+// ---- Diapositivas de sección y de cierre ----------------------------------
+// ## Título {.seccion background-color="..."}  /  ## ¡Gracias! {.cierre ...}
+.reveal .slides section.seccion,
+.reveal .slides section.cierre { color: #fff; }
+.reveal .slides section.seccion h2,
+.reveal .slides section.cierre h2 { color: #fff; font-size: 2em; }
+
+// ---- Elementos fijos -------------------------------------------------------
+.reveal .progress span { background-color: $brand-naranja; }
+.reveal .slide-number { color: $brand-azul; font-family: "Barlow", sans-serif; }
+.reveal .footer { color: rgba($brand-gris-texto, .6); }
+
+// Sobre fondos oscuros: logo oculto (es azul) y textos fijos en blanco
+.reveal.has-dark-background .slide-logo { display: none !important; }
+.reveal.has-dark-background .footer,
+.reveal.has-dark-background .slide-number { color: rgba(#fff, .8); }
+
+// ---- Tablas y bloque destacado ---------------------------------------------
+.reveal table { font-size: .8em; }
+.reveal thead tr { background-color: $brand-azul; color: #fff; font-family: "Barlow", sans-serif; }
+.reveal tbody tr:nth-child(even) { background-color: rgba($brand-azul, .05); }
+
+.reveal .destacado {
+  background: $brand-gris-suave;
+  border-left: 8px solid $brand-naranja;
+  padding: .6em 1em;
+}

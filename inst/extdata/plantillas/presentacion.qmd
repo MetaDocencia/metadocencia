@@ -1,0 +1,52 @@
+---
+title: "Título de la presentación"
+subtitle: "Evento o contexto"
+author: "Nombre Apellido"
+date: today
+format:
+  metadocencia-revealjs:
+    footer: "MetaDocencia"
+title-slide-attributes:
+  data-background-color: "{{< brand color azul >}}"
+---
+
+```{r}
+#| label: setup
+#| include: false
+library(ggplot2)
+library(metadocencia)
+theme_set(theme_metadocencia(base_size = 18))
+```
+
+## Primer tema
+
+- Una idea por diapositiva
+- Pocas palabras, frases cortas
+- El detalle va en las notas de quien presenta
+
+::: {.notes}
+Notas para quien presenta (tecla S).
+:::
+
+## Un gráfico
+
+```{r}
+#| fig-width: 10
+#| fig-height: 4.6
+ggplot(mpg, aes(class, fill = drv)) +
+  geom_bar() +
+  scale_fill_metadocencia() +
+  labs(x = NULL, y = "Cantidad", fill = "Tracción")
+```
+
+## Nueva sección {.seccion background-color="{{< brand color azul >}}"}
+
+## Mensaje clave
+
+::: {.destacado}
+La conclusión que el público tiene que recordar.
+:::
+
+## ¡Gracias! {.cierre background-color="{{< brand color rojo >}}"}
+
+info@metadocencia.org

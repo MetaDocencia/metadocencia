@@ -1,0 +1,69 @@
+---
+title: "Título del reporte"
+subtitle: "Subtítulo opcional"
+author:
+  - name: Nombre Apellido
+    affiliation: MetaDocencia
+date: today
+abstract: |
+  Resumen breve: qué se analizó, con qué datos y cuál es el hallazgo
+  principal. Dos o tres oraciones alcanzan.
+format: __FORMATO__
+---
+
+```{r}
+#| label: setup
+library(ggplot2)
+library(metadocencia)
+theme_set(theme_metadocencia())
+```
+
+## Introducción
+
+Breve descripción del contexto y objetivos del reporte. Colores,
+tipografías, logo y diagramación los aporta el formato institucional:
+acá solo se escribe el contenido.
+
+::: {.destacado}
+**Mensaje clave.** Usá este bloque para la conclusión principal o un dato
+que el lector no se puede perder.
+:::
+
+## Metodología
+
+Descripción del enfoque metodológico utilizado.
+
+## Resultados
+
+### Primer resultado
+
+```{r}
+#| label: fig-resultado-1
+#| fig-cap: "Ejemplo de gráfico con la paleta institucional."
+#| fig-width: 7
+#| fig-height: 3.8
+ggplot(mpg, aes(displ, hwy, colour = drv)) +
+  geom_point(size = 2.2, alpha = .85) +
+  scale_colour_metadocencia() +
+  labs(x = "Cilindrada (l)", y = "Rendimiento en ruta (mpg)", colour = "Tracción")
+```
+
+La @fig-resultado-1 muestra la relación entre cilindrada y rendimiento.
+
+### Segundo resultado
+
+| Indicador            | 2025  | 2026  | Variación |
+|----------------------|------:|------:|----------:|
+| Personas formadas    | 1.240 | 1.512 |   +21,9 % |
+| Talleres dictados    |    38 |    45 |   +18,4 % |
+| Satisfacción (1 a 5) |   4,3 |   4,5 |      +0,2 |
+
+: Indicadores principales {#tbl-indicadores}
+
+## Discusión
+
+Interpretación de los resultados en contexto.
+
+## Conclusiones
+
+Síntesis de los hallazgos principales y recomendaciones.

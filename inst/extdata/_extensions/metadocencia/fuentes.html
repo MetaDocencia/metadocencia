@@ -1,0 +1,26 @@
+<!--
+  Fuentes de MetaDocencia para HTML y RevealJS (WOFF2, sin internet).
+  Quarto 1.9 no resuelve las rutas de @font-face cuando el brand viene de
+  una extensión, así que se declaran acá con rutas relativas al .qmd, que
+  vive en la raíz del proyecto creado por nuevo_documento(). Con
+  embed-resources: true, Quarto las incrusta en el HTML final.
+  Si cambia la tipografía en brand/_brand.yml, actualizar también acá.
+-->
+<style>
+@font-face { font-family: "Open Sans"; font-weight: 400; font-style: normal; font-display: swap;
+  src: url("_extensions/metadocencia/brand/fuentes/OpenSans-Regular.woff2") format("woff2"); }
+@font-face { font-family: "Open Sans"; font-weight: 400; font-style: italic; font-display: swap;
+  src: url("_extensions/metadocencia/brand/fuentes/OpenSans-Italic.woff2") format("woff2"); }
+@font-face { font-family: "Open Sans"; font-weight: 600; font-style: normal; font-display: swap;
+  src: url("_extensions/metadocencia/brand/fuentes/OpenSans-SemiBold.woff2") format("woff2"); }
+@font-face { font-family: "Open Sans"; font-weight: 700; font-style: normal; font-display: swap;
+  src: url("_extensions/metadocencia/brand/fuentes/OpenSans-Bold.woff2") format("woff2"); }
+@font-face { font-family: "Open Sans"; font-weight: 700; font-style: italic; font-display: swap;
+  src: url("_extensions/metadocencia/brand/fuentes/OpenSans-BoldItalic.woff2") format("woff2"); }
+@font-face { font-family: "Barlow"; font-weight: 400; font-style: normal; font-display: swap;
+  src: url("_extensions/metadocencia/brand/fuentes/Barlow-Regular.woff2") format("woff2"); }
+@font-face { font-family: "Barlow"; font-weight: 700; font-style: normal; font-display: swap;
+  src: url("_extensions/metadocencia/brand/fuentes/Barlow-Bold.woff2") format("woff2"); }
+@font-face { font-family: "JetBrains Mono"; font-weight: 400; font-style: normal; font-display: swap;
+  src: url("_extensions/metadocencia/brand/fuentes/JetBrainsMono-Regular.woff2") format("woff2"); }
+</style>

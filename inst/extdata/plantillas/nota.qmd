@@ -1,0 +1,22 @@
+---
+title: "Nota"
+tipo: nota
+destinatario: "Nombre Apellido, Organización destinataria"
+author: "Nombre Apellido"
+referencia: "Asunto breve de la nota"
+date: today
+format: metadocencia-typst
+---
+
+De nuestra mayor consideración:
+
+Nos dirigimos a usted a fin de informar sobre el asunto de referencia.
+Usá este formato para notas, cartas y comunicaciones breves de una o dos
+páginas.
+
+::: {.destacado}
+**Se solicita:** acción concreta que se pide a quien recibe la nota, con
+fecha si corresponde.
+:::
+
+Sin otro particular, saludamos atentamente.
