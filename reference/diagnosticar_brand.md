@@ -42,9 +42,9 @@ forma invisible.
 ``` r
 dir <- tempdir()
 nuevo_documento("nota-ejemplo", tipo = "nota", directorio = dir, abrir = FALSE)
-#> ✔ Documento creado: /tmp/RtmpBHePJX/nota-ejemplo
+#> ✔ Documento creado: /tmp/RtmpLFju9g/nota-ejemplo
 #> • Editá nota-ejemplo.qmd.
 #> • Renderizá con el botón Render o con `quarto render nota-ejemplo.qmd`.
 diagnosticar_brand(file.path(dir, "nota-ejemplo"))
-#> ✔ /tmp/RtmpBHePJX/nota-ejemplo (actualizado)
+#> ✔ /tmp/RtmpLFju9g/nota-ejemplo (actualizado)
 ```

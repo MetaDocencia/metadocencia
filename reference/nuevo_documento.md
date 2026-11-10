@@ -47,7 +47,7 @@ La ruta a la carpeta creada, de forma invisible.
 dir <- tempdir()
 nuevo_documento("informe-anual", tipo = "reporte-html",
                 directorio = dir, abrir = FALSE)
-#> ✔ Documento creado: /tmp/RtmpBHePJX/informe-anual
+#> ✔ Documento creado: /tmp/RtmpLFju9g/informe-anual
 #> • Editá informe-anual.qmd.
 #> • Renderizá con el botón Render o con `quarto render informe-anual.qmd`.
 list.files(file.path(dir, "informe-anual"))

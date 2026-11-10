@@ -36,10 +36,10 @@ Las rutas de los documentos actualizados, de forma invisible.
 ``` r
 dir <- tempdir()
 nuevo_documento("nota-ejemplo2", tipo = "nota", directorio = dir, abrir = FALSE)
-#> ✔ Documento creado: /tmp/RtmpBHePJX/nota-ejemplo2
+#> ✔ Documento creado: /tmp/RtmpLFju9g/nota-ejemplo2
 #> • Editá nota-ejemplo2.qmd.
 #> • Renderizá con el botón Render o con `quarto render nota-ejemplo2.qmd`.
 actualizar_brand(file.path(dir, "nota-ejemplo2"), confirmar = FALSE)
-#> ℹ /tmp/RtmpBHePJX/nota-ejemplo2: ya está actualizado.
+#> ℹ /tmp/RtmpLFju9g/nota-ejemplo2: ya está actualizado.
 #> ℹ 0 documento(s) actualizado(s) a la versión 1.0.0.
 ```
